@@ -1,0 +1,38 @@
+// Variables
+//
+//
+// Color System
+
+$white: #ffffff;
+$gray-100: #ececed;
+$gray-200: #d9d9da;
+$gray-300: #c5c7c8;
+$gray-400: #b2b4b5;
+$gray-500: #9fa1a3;
+$gray-600: #7f8182;
+$gray-700: #5f6162;
+$gray-800: #404041;
+$gray-900: #202021;
+$black: #000000;
+
+$grays: (
+  "gray-100": $gray-100,
+  "gray-200": $gray-200,
+  "gray-300": $gray-300,
+  "gray-400": $gray-400,
+  "gray-500": $gray-500,
+  "gray-600": $gray-600,
+  "gray-700": $gray-700,
+  "gray-800": $gray-800,
+  "gray-900": $gray-900,
+);
+/// @group Colors
+$blue: #2274a5;
+$indigo: #540d6e;
+$purple: #b388eb;
+$pink: #e93899;
+$red: #d51717;
+$orange: #fca331;
+$yellow: #f7f052;
+$teal: #8cfbde;
+$green: #08a045;
