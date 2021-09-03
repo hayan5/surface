@@ -1,38 +1,125 @@
-// Variables
-//
-//
-// Color System
+// ========================================================================
+// Surface variables
+// ========================================================================
 
-$white: #ffffff;
-$gray-100: #ececed;
-$gray-200: #d9d9da;
-$gray-300: #c5c7c8;
-$gray-400: #b2b4b5;
-$gray-500: #9fa1a3;
-$gray-600: #7f8182;
-$gray-700: #5f6162;
-$gray-800: #404041;
-$gray-900: #202021;
-$black: #000000;
+// Colors
+// ========================================================================
 
-$grays: (
-  "gray-100": $gray-100,
-  "gray-200": $gray-200,
-  "gray-300": $gray-300,
-  "gray-400": $gray-400,
-  "gray-500": $gray-500,
-  "gray-600": $gray-600,
-  "gray-700": $gray-700,
-  "gray-800": $gray-800,
-  "gray-900": $gray-900,
+$blue: create-color-palette(#33a6da);
+$purple: create-color-palette(#9d2392);
+$pink: create-color-palette(#ea0084);
+$red: create-color-palette(#ff3a23);
+$orange: create-color-palette(#fb951b);
+$yellow: create-color-palette(#f4ea2e);
+$teal: create-color-palette(#00d298);
+$green: create-color-palette(#17af4e);
+$gray: create-color-palette(#9fa1a3, $scale-dark: 2, $scale-saturation: 0);
+
+$colors: (
+  'blue': $blue,
+  'purple': $purple,
+  'pink': $pink,
+  'red': $red,
+  'orange': $orange,
+  'yellow': $yellow,
+  'teal': $teal,
+  'green': $green,
+  'gray': $gray
 );
-/// @group Colors
-$blue: #2274a5;
-$indigo: #540d6e;
-$purple: #b388eb;
-$pink: #e93899;
-$red: #d51717;
-$orange: #fca331;
-$yellow: #f7f052;
-$teal: #8cfbde;
-$green: #08a045;
+
+// Typography
+// ========================================================================
+
+$text-base-size: 16em;
+$text-scale-ratio: 1.333;
+
+$font-sizes: create-scale($text-base-size, $text-scale-ratio, $sizes-smaller: 2, $sizes-larger: 5);
+
+// Breakpoints
+// ========================================================================
+$sm-screen: 576px;
+$md-screen: 768px;
+$lg-screen: 1024px;
+$xl-screen: 1280px;
+$xxl-screen: 1400px;
+
+@mixin bg($color-map) {
+  div {
+    $i: 6;
+    @each $color, $value in $color-map {
+      &:nth-child(#{$i}) {
+        background-color: $value;
+      }
+
+      @if ($i <= 6) {
+        $i: $i - 1;
+      } @else {
+        $i: $i + 1;
+      }
+      @if ($i == 0) {
+        $i: 7;
+      }
+    }
+  }
+}
+
+.colors {
+  display: flex;
+  flex-direction: column;
+
+  .color {
+    display: flex;
+    div {
+      height: 50px;
+      width: 100px;
+      margin: 5px;
+      border-radius: 10px;
+    }
+    $i: 1;
+    @each $key, $value in $colors {
+      &:nth-child(#{$i}) {
+        @include bg($value);
+      }
+      $i: $i + 1;
+    }
+  }
+}
+
+$h1-font-size: 97px;
+$h2-font-size: 61px;
+$h3-font-size: 48px;
+$h4-font-size: 34px;
+$h5-font-size: 24px;
+$h6-font-size: 20px;
+
+$body-1: 16px;
+$body-2: 14px;
+
+// .indigo {
+//   color: color('blue', 'base');
+// }
+// .indigo {
+//   background-color: $indigo;
+//   @each $color, $shade in $indigos {
+//     &.#{$color} {
+//       background-color: $shade;
+//     }
+//   }
+// }
+
+// @each $color, $shade in $indigo {
+//   .bg-#{$color} {
+//     background-color: $shade;
+//   }
+//   .#{$color} {
+//     color: $shade;
+//   }
+// }
+
+// .colors {
+//   display: flex;
+//   div {
+//     height: 50px;
+//     width: 100px;
+//   }
+// }

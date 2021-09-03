@@ -1,0 +1,129 @@
+@use "sass:math";
+@use "sass:color";
+
+/// Create shades and tints of a color using Sass built in scale-color function
+///
+/// @group Color
+///
+/// @param {Color} $color - Base color
+/// @param {Number} $scale-light [1.75] - Amount of change on each color shade
+/// @param {Number} $scale-dark [1.75] - Amount of change on each color tint
+/// @param {Number} $scale-saturation [5] - Amount of change in saturation on each shade and tint
+/// @param {Number} $shades [5] - Total number of shades created
+/// @param {Number} $tints [4] - Total number of tints created
+///
+/// @return {Map} A map containing the base color, tints and shades
+
+@function create-color-palette(
+  $color,
+  $scale-light: 1.75,
+  $scale-dark: 1.75,
+  $scale-saturation: 5,
+  $shades: 5,
+  $tints: 4
+) {
+  $color-map: (
+    'base': $color
+  );
+  $base-lightness: 10;
+  $saturation: 0;
+
+  @for $i from 1 through $shades {
+    $lightness: $base-lightness * ($i * $scale-light);
+    $saturation: ($saturation + ($scale-saturation * -1));
+    $new-color: scale-color($color, $lightness: ($lightness * 1%), $saturation: ($saturation * 1%));
+    $color-map: map-merge(
+      $color-map,
+      (
+        'lighter-#{$i}': $new-color
+      )
+    );
+  }
+
+  $saturation: 0;
+  @for $i from 1 through $tints {
+    $lightness: ($base-lightness * ($i * $scale-dark)) * -1;
+    $saturation: $saturation + $scale-saturation;
+    $new-color: scale-color($color, $lightness: ($lightness * 1%), $saturation: ($saturation * 1%));
+    $color-map: map-merge(
+      $color-map,
+      (
+        'darker-#{$i}': $new-color
+      )
+    );
+  }
+
+  @return $color-map;
+}
+
+// @function color($color, $type) {
+//   @if map-has-key($map: $colors, $key: $color) {
+//     $current-color: map-get($map: $colors, $key: $color);
+//     @if map-has-key($map: $current-color, $key: $type) {
+//       @return map-get($map: $current-color, $key: $type)
+//     }
+//   }
+//   @warn "Unknown `#{$color}` - `#{$type}` in $colors.";
+//   @return null;
+// }
+
+/// Removes units of value
+///
+/// @group Helpers
+///
+/// @param {Number} $value - Value with units
+///
+/// @return {Number} - Value without units
+
+@function strip-unit($value) {
+  @if type-of($value) == 'number' and not unitless($value) {
+    @return $value / ($value * 0 + 1);
+  }
+
+  @return $value;
+}
+
+/// Creates a map based on a base size and ratio
+///
+/// @group Helpers
+///
+/// @param {Number} $base-size - Base size of scale
+/// @param {Number} $scale-ratio - Ratio of scale sizes
+/// @param {Number} $sizes-smaller [2] - Number of sizes smaller than base on scale
+/// @param {Number} $sizes-larger [3] - Number of sizes larger than base on scale
+///
+/// @return {Map} - A map containing the scale
+
+@function create-scale($base-size, $scale-ratio, $sizes-smaller: 2, $sizes-larger: 3) {
+  $scale: ();
+  $size: 1;
+  @for $i from $sizes-smaller through 1 {
+    $new-size: math.div($base-size, math.pow($scale-ratio, $i));
+    $scale: map-merge(
+      $scale,
+      (
+        $size: $new-size
+      )
+    );
+    $size: $size + 1;
+  }
+  $scale: map-merge(
+    $scale,
+    (
+      $size: $base-size
+    )
+  );
+
+  @for $i from 1 through $sizes-larger {
+    $size: $size + 1;
+    $new-size: $base-size * math.pow($scale-ratio, $i);
+    $scale: map-merge(
+      $scale,
+      (
+        $size: $new-size
+      )
+    );
+  }
+
+  @return $scale;
+}

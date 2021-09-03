@@ -18,11 +18,11 @@
     "build": "npm-run-all lint build:scss build:autoprefix build:cleancss",
     "build:autoprefix": "postcss --use autoprefixer --map false --output css/surface.css css/surface.css",
     "build:cleancss": "cleancss -o css/surface.min.css css/surface.css",
-    "build:scss": "node-sass  --output-style expanded --source-map true surface.scss css/surface.css",
+    "build:scss": "sass  --style expanded --source-map surface.scss:css/surface.css",
     "clean": "rimraf css",
     "lint": "stylelint \"**/*.{css,scss}\"",
     "watch": "npm-run-all --parallel watch:scss watch:html",
-    "watch:scss": "nodemon --watch surface.scss --ext scss --exec \"npm-run-all build:scss\"",
+    "watch:scss": "nodemon --watch /scss/**/* --ext scss --exec \"npm-run-all build:scss\"",
     "watch:html": "live-server",
     "docs": "gulp serve",
     "docs:build": "gulp sassdoc"
@@ -38,7 +38,7 @@
     "postcss-cli": "^8.3.1",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
-    "sass": "^1.38.2",
+    "sass": "^1.39.0",
     "sassdoc": "^2.7.3",
     "stylelint": "^13.13.1",
     "stylelint-config-twbs-bootstrap": "^2.2.3"

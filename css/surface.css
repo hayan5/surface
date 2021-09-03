@@ -1,5 +1,373 @@
-h1 {
-  color: #000;
+.colors {
+  display: flex;
+  flex-direction: column;
+}
+.colors .color {
+  display: flex;
+}
+.colors .color div {
+  height: 50px;
+  width: 100px;
+  margin: 5px;
+  border-radius: 10px;
+}
+.colors .color:nth-child(1) div:nth-child(6) {
+  background-color: #33a6da;
+}
+.colors .color:nth-child(1) div:nth-child(5) {
+  background-color: #5ab4dd;
+}
+.colors .color:nth-child(1) div:nth-child(4) {
+  background-color: #80c3e2;
+}
+.colors .color:nth-child(1) div:nth-child(3) {
+  background-color: #a4d2e7;
+}
+.colors .color:nth-child(1) div:nth-child(2) {
+  background-color: #c7e2ef;
+}
+.colors .color:nth-child(1) div:nth-child(1) {
+  background-color: #e8f3f8;
+}
+.colors .color:nth-child(1) div:nth-child(7) {
+  background-color: #208dbe;
+}
+.colors .color:nth-child(1) div:nth-child(8) {
+  background-color: #186f97;
+}
+.colors .color:nth-child(1) div:nth-child(9) {
+  background-color: #11526f;
+}
+.colors .color:nth-child(1) div:nth-child(10) {
+  background-color: #0a3447;
+}
+.colors .color:nth-child(2) div:nth-child(6) {
+  background-color: #9d2392;
+}
+.colors .color:nth-child(2) div:nth-child(5) {
+  background-color: #c731b9;
+}
+.colors .color:nth-child(2) div:nth-child(4) {
+  background-color: #d35dc8;
+}
+.colors .color:nth-child(2) div:nth-child(3) {
+  background-color: #dc8bd5;
+}
+.colors .color:nth-child(2) div:nth-child(2) {
+  background-color: #e8b7e3;
+}
+.colors .color:nth-child(2) div:nth-child(1) {
+  background-color: #f5e2f3;
+}
+.colors .color:nth-child(2) div:nth-child(7) {
+  background-color: #831b7a;
+}
+.colors .color:nth-child(2) div:nth-child(8) {
+  background-color: #681461;
+}
+.colors .color:nth-child(2) div:nth-child(9) {
+  background-color: #4d0e47;
+}
+.colors .color:nth-child(2) div:nth-child(10) {
+  background-color: #31082e;
+}
+.colors .color:nth-child(3) div:nth-child(6) {
+  background-color: #ea0084;
+}
+.colors .color:nth-child(3) div:nth-child(5) {
+  background-color: #f9219b;
+}
+.colors .color:nth-child(3) div:nth-child(4) {
+  background-color: #f655b0;
+}
+.colors .color:nth-child(3) div:nth-child(3) {
+  background-color: #f586c5;
+}
+.colors .color:nth-child(3) div:nth-child(2) {
+  background-color: #f7b4da;
+}
+.colors .color:nth-child(3) div:nth-child(1) {
+  background-color: #fbe1ef;
+}
+.colors .color:nth-child(3) div:nth-child(7) {
+  background-color: #c1006d;
+}
+.colors .color:nth-child(3) div:nth-child(8) {
+  background-color: #980056;
+}
+.colors .color:nth-child(3) div:nth-child(9) {
+  background-color: #6f003f;
+}
+.colors .color:nth-child(3) div:nth-child(10) {
+  background-color: #460028;
+}
+.colors .color:nth-child(4) div:nth-child(6) {
+  background-color: #ff3a23;
+}
+.colors .color:nth-child(4) div:nth-child(5) {
+  background-color: #fa604e;
+}
+.colors .color:nth-child(4) div:nth-child(4) {
+  background-color: #f88577;
+}
+.colors .color:nth-child(4) div:nth-child(3) {
+  background-color: #f7a89e;
+}
+.colors .color:nth-child(4) div:nth-child(2) {
+  background-color: #f8c9c4;
+}
+.colors .color:nth-child(4) div:nth-child(1) {
+  background-color: #fce9e7;
+}
+.colors .color:nth-child(4) div:nth-child(7) {
+  background-color: #ef1900;
+}
+.colors .color:nth-child(4) div:nth-child(8) {
+  background-color: #bd1400;
+}
+.colors .color:nth-child(4) div:nth-child(9) {
+  background-color: #8a0e00;
+}
+.colors .color:nth-child(4) div:nth-child(10) {
+  background-color: #570900;
+}
+.colors .color:nth-child(5) div:nth-child(6) {
+  background-color: #fb951b;
+}
+.colors .color:nth-child(5) div:nth-child(5) {
+  background-color: #f7a748;
+}
+.colors .color:nth-child(5) div:nth-child(4) {
+  background-color: #f5b972;
+}
+.colors .color:nth-child(5) div:nth-child(3) {
+  background-color: #f5cc9b;
+}
+.colors .color:nth-child(5) div:nth-child(2) {
+  background-color: #f7dfc1;
+}
+.colors .color:nth-child(5) div:nth-child(1) {
+  background-color: #fbf1e6;
+}
+.colors .color:nth-child(5) div:nth-child(7) {
+  background-color: #e27d04;
+}
+.colors .color:nth-child(5) div:nth-child(8) {
+  background-color: #b26203;
+}
+.colors .color:nth-child(5) div:nth-child(9) {
+  background-color: #824802;
+}
+.colors .color:nth-child(5) div:nth-child(10) {
+  background-color: #522d01;
+}
+.colors .color:nth-child(6) div:nth-child(6) {
+  background-color: #f4ea2e;
+}
+.colors .color:nth-child(6) div:nth-child(5) {
+  background-color: #f2ea57;
+}
+.colors .color:nth-child(6) div:nth-child(4) {
+  background-color: #f1ec7e;
+}
+.colors .color:nth-child(6) div:nth-child(3) {
+  background-color: #f3efa3;
+}
+.colors .color:nth-child(6) div:nth-child(2) {
+  background-color: #f6f3c6;
+}
+.colors .color:nth-child(6) div:nth-child(1) {
+  background-color: #fbfae8;
+}
+.colors .color:nth-child(6) div:nth-child(7) {
+  background-color: #e4d90b;
+}
+.colors .color:nth-child(6) div:nth-child(8) {
+  background-color: #b4ab08;
+}
+.colors .color:nth-child(6) div:nth-child(9) {
+  background-color: #847e06;
+}
+.colors .color:nth-child(6) div:nth-child(10) {
+  background-color: #544f03;
+}
+.colors .color:nth-child(7) div:nth-child(6) {
+  background-color: #00d298;
+}
+.colors .color:nth-child(7) div:nth-child(5) {
+  background-color: #0ef9b8;
+}
+.colors .color:nth-child(7) div:nth-child(4) {
+  background-color: #46f5c5;
+}
+.colors .color:nth-child(7) div:nth-child(3) {
+  background-color: #7bf4d3;
+}
+.colors .color:nth-child(7) div:nth-child(2) {
+  background-color: #aef6e2;
+}
+.colors .color:nth-child(7) div:nth-child(1) {
+  background-color: #defaf3;
+}
+.colors .color:nth-child(7) div:nth-child(7) {
+  background-color: #00ad7d;
+}
+.colors .color:nth-child(7) div:nth-child(8) {
+  background-color: #008963;
+}
+.colors .color:nth-child(7) div:nth-child(9) {
+  background-color: #006448;
+}
+.colors .color:nth-child(7) div:nth-child(10) {
+  background-color: #003f2e;
+}
+.colors .color:nth-child(8) div:nth-child(6) {
+  background-color: #17af4e;
+}
+.colors .color:nth-child(8) div:nth-child(5) {
+  background-color: #22da65;
+}
+.colors .color:nth-child(8) div:nth-child(4) {
+  background-color: #54e086;
+}
+.colors .color:nth-child(8) div:nth-child(3) {
+  background-color: #85e5a8;
+}
+.colors .color:nth-child(8) div:nth-child(2) {
+  background-color: #b3edc8;
+}
+.colors .color:nth-child(8) div:nth-child(1) {
+  background-color: #e0f7e8;
+}
+.colors .color:nth-child(8) div:nth-child(7) {
+  background-color: #129140;
+}
+.colors .color:nth-child(8) div:nth-child(8) {
+  background-color: #0d7332;
+}
+.colors .color:nth-child(8) div:nth-child(9) {
+  background-color: #095525;
+}
+.colors .color:nth-child(8) div:nth-child(10) {
+  background-color: #063617;
+}
+.colors .color:nth-child(9) div:nth-child(6) {
+  background-color: #9fa1a3;
+}
+.colors .color:nth-child(9) div:nth-child(5) {
+  background-color: #b0b1b3;
+}
+.colors .color:nth-child(9) div:nth-child(4) {
+  background-color: #c1c2c3;
+}
+.colors .color:nth-child(9) div:nth-child(3) {
+  background-color: #d1d2d3;
+}
+.colors .color:nth-child(9) div:nth-child(2) {
+  background-color: #e2e3e3;
+}
+.colors .color:nth-child(9) div:nth-child(1) {
+  background-color: #f3f3f4;
+}
+.colors .color:nth-child(9) div:nth-child(7) {
+  background-color: #7e8183;
+}
+.colors .color:nth-child(9) div:nth-child(8) {
+  background-color: #5f6163;
+}
+.colors .color:nth-child(9) div:nth-child(9) {
+  background-color: #3f4042;
+}
+.colors .color:nth-child(9) div:nth-child(10) {
+  background-color: #202021;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /*# sourceMappingURL=surface.css.map */
